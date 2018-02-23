@@ -27,10 +27,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'factory_bot_rails', '~> 4.0'
-end
-
-group :production do
-  gem 'rails_12factor'
+  gem 'coveralls', require: false
 end
 
 group :development do

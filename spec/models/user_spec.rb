@@ -8,6 +8,7 @@ RSpec.describe User do
     let(:holger){described_class.new(name: 'Holger', password: 'passord123', email: 'holgeer@kalle.no')}
 
     it 'is expected to have a name' do
+        
       expect(kalle.name).to eq 'Kalle'
     end
 
