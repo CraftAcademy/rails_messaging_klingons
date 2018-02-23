@@ -10,7 +10,7 @@ Given("I am logged in as {string}") do |name|
 end
 
 Given("I am on the inbox page") do
-  visit mailbox_inbox_path #mailbox/inbox
+  visit mailbox_inbox_path 
 end
 
 Then("I click the {string} button") do |element|
@@ -38,5 +38,5 @@ Then("I click the {string} link") do |element|
 end
 
 Then("I accept the alert") do
-  page.driver.browser.switch_to.alert.accept
+  accept_alert
 end

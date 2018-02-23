@@ -1,7 +1,10 @@
 require 'cucumber/rails'
-World(FactoryBot::Syntax::Methods)
+
 Chromedriver.set_version '2.33'
 
+World(FactoryBot::Syntax::Methods)
+
+ActionController::Base.allow_rescue = false
 Capybara.register_driver :selenium do |app|
   options = Selenium::WebDriver::Chrome::Options.new(
       args: %w( headless disable-popup-blocking disable-infobars)
@@ -13,11 +16,8 @@ Capybara.register_driver :selenium do |app|
       options: options
   )
 end
+
 Capybara.javascript_driver = :selenium
-
-
-ActionController::Base.allow_rescue = false
-
 begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
@@ -25,4 +25,3 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
-
