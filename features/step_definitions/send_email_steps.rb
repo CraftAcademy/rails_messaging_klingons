@@ -38,5 +38,5 @@ Then("I click the {string} link") do |element|
 end
 
 Then("I accept the alert") do
-  page.driver.browser.switch_to.alert.accept
+  accept_alert
 end

@@ -38,6 +38,10 @@ Feature: Test of mailboxers functionality
     And I click the 'Untrash' link
     Then I should see 'Heia Northug' on my screen
 
+  Scenario: Holger logs out successfully
+    Given I click the 'Logout' link
+    Then I should see 'Signed out successfully.' on my screen
+
   Scenario: Kalle sends a message to Holger
     Given I am logged in as 'Kalle'
     And I am on the inbox page
